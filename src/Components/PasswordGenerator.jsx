@@ -38,32 +38,42 @@ function PasswordGenerator() {
     }
 
     const generatePassword = () => {
-
         let characterList = '';
-
+        let tempPassword = '';
+        const categories = [];
+    
         if (lowerCase) {
-            characterList += lowercaseList;
+            const randomLower = lowercaseList.charAt(Math.floor(Math.random() * lowercaseList.length));
+            tempPassword += randomLower;
+            categories.push(lowercaseList);
         }
         if (upperCase) {
-            characterList += uppercaseList;
+            const randomUpper = uppercaseList.charAt(Math.floor(Math.random() * uppercaseList.length));
+            tempPassword += randomUpper;
+            categories.push(uppercaseList);
         }
         if (numbers) {
-            characterList += numbersList;
+            const randomNumber = numbersList.charAt(Math.floor(Math.random() * numbersList.length));
+            tempPassword += randomNumber;
+            categories.push(numbersList);
         }
         if (symbols) {
-            characterList += symbolsList;
+            const randomSymbol = symbolsList.charAt(Math.floor(Math.random() * symbolsList.length));
+            tempPassword += randomSymbol;
+            categories.push(symbolsList);
         }
-
-        let tempPassword = '';
-        const characterListLength = characterList.length;
-
-        for (let i = 0; i < passwordLength; i++) {
-            const characterIndex = Math.round(Math.random() * characterListLength);
-            tempPassword += characterList.charAt(characterIndex);
+    
+        characterList = categories.join('');
+    
+        for (let i = tempPassword.length; i < passwordLength; i++) {
+            const randomCharacter = characterList.charAt(Math.floor(Math.random() * characterList.length));
+            tempPassword += randomCharacter;
         }
-
+    
+        tempPassword = tempPassword.split('').sort(() => 0.5 - Math.random()).join('');
+    
         setPassword(tempPassword);
-    }
+    };
 
     const copyPassword = async () => {
         const copiedText = await navigator.clipboard.readText();
