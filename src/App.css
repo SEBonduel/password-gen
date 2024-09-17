@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color:var(--text-color);
+
 }
 
 .App {
@@ -23,8 +25,6 @@
 
 .container{
   background-color:var(--container-color);
-  color:var(--text-color);
-
 }
 
 

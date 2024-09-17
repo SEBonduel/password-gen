@@ -77,7 +77,7 @@ function PasswordGenerator() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "fire",
             });
         }
         if (copiedText === password) {
@@ -89,7 +89,7 @@ function PasswordGenerator() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark",
+                theme: "fire",
             });
         }
     }
