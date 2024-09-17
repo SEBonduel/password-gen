@@ -1,3 +1,29 @@
+:root{
+  --body_background: white;
+  --body_color: black;
+  --link-color:#333333;
+  --container-color:rgba(0, 0, 0, 0.2);
+  --text-color:black;
+  --text2-color:rgb(255, 255, 255);
+  --btn-color: #333333;
+  --svg-color:black;
+}
+
+[data-theme="dark"]{
+  --body_background: #282c34;
+  --body_color: white;
+  --link-color:cyan;
+  --container-color:rgba(16, 30, 45, 0.2);
+  --text-color:white;
+  --text2-color:rgb(0, 0, 0);
+  --btn-color: #61dafb;
+  --svg-color:white;
+}
+
+*{
+  transition: all 0.3s ease-in-out;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
